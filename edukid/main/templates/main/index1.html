@@ -1,0 +1,277 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edukid</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+	<script src="{% static 'main/js/scripts.js' %}"></script>
+
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.css"/>
+	<script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+
+</head>
+<body>
+	<div class="wraper">
+		<header class="header">
+			<div class="header_content container">
+				<nav class="menu_body">
+					<div class="burger">
+						<div class="header__burger" id="burger">
+							<span></span>
+							<div class="header__burger-menu">
+								<ul class="burger-list">
+									<li>
+										<img src="{% static 'main/images/svg/burger1.svg' %}">
+										<a href="/my_classes">Мой класс</a>
+									</li>
+									<li>
+										<img src="{% static 'main/images/svg/burger2.svg' %}">
+										<a href="">Мои тетради</a>
+									</li>
+									<li>
+										<img src="{% static 'main/images/svg/burger3.svg' %}">
+										<a href="">Задания</a>
+									</li>
+									<li>
+										<img src="{% static 'main/images/svg/burger4.svg' %}">
+										<a href="/progress">Моя успеваемость</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="">Edukid</a>
+					</div>
+					<ul class="menu_list">
+						<li><a href="" class="menu_link">О нас</a></li>
+						<li><a href="" class="menu_link">Для кого</a></li>
+						<li><a href="" class="menu_link">Возможности</a></li>
+						<li><a href="" class="menu_link">Контакты</a></li>
+					</ul>
+					<div class="sign-button">
+						<img src="{% static 'main/images/svg/Vector.svg' %}">
+						<a href="/sign-up"><button id="sign-btn">Войти</button></a>
+					</div>
+				</nav>
+			</div>
+		</header>
+		<main class="page">
+			<div class="introdution">
+				<div class="introdution_container container">
+					<div class="introdution_text">
+						<h1>Платформа для назначения и выполнения заданий</h1>
+					</div>
+					<div class="introdution_pic">
+						<div class="romb">
+							<img src="{% static 'main/images/jpg/child_listen.jpg' %}">
+						</div>
+					</div>
+					<div class="back_romb">
+						<div class="back_romb_content"></div>
+					</div>
+					<img class="orange-ellipse1 ellipse" src="{% static 'main/images/svg/Ellipse-orange.svg' %}">
+					<img class="blue-ellipse1 ellipse" src="{% static 'main/images/svg/Ellipse2.svg' %}">
+					<div class="rectangle1">
+						<div class="rectangle1_content"></div>
+					</div>
+					<div class="arcs">
+						<img src="{% static 'main/images/svg/Ellipse_fouth_big.svg' %}" style="width: 63px; height: 63px;">
+						<img src="{% static 'main/images/svg/Ellipse_fouth_midle.svg' %}" style="width: 47px; height: 47px;">
+						<img src="{% static 'main/images/svg/Ellipse_fouth_small.svg' %}" style="width: 30px; height: 30px;">
+					</div>
+<!-- 					<img class="triangle" src="{% static 'main/images/svg/triangle.svg' %}"> -->
+					<img class="elipse1" src="{% static 'main/images/svg/Ellipse.svg' %}">
+					<img class="strelka" src="{% static 'main/images/svg/strelka.svg' %}">
+				</div>
+			</div>
+			<div class="more-edukid">
+				<div class="container">
+					<div class="more-edukid-container">
+						<a href="">Edukid</a>
+						<p>Сервис <span class="selected-text">EduKid</span> создан для ускорения и облегчения привычных нам процессов, речь о домашних заданиях. Можно быстро назначать и выполнять работы в формате текста, фото, видео, аудио. Отслеживайте успеваемость и создавайте рейтинги учеников. Создавайте тетради с полезными материалами и делитесь ими.</p>
+					</div>
+				</div>
+			</div>
+			<div class="audience">
+				<div class="audience_decor">
+					<div class="trapecia_container container">
+						<div class="trapecia">
+							<div class="big-triangle"></div>
+							<div class="trapecia_body">
+								<div class="top-triangle">
+									<div class="small-triangle"></div>
+									<img src="{% static 'main/images/svg/Vector-strelka.svg' %}">
+								</div>
+							</div>
+						</div>				
+					</div>
+					<div class="audience_decor_left"></div>
+					<div class="audience_decor_right"></div>
+				</div>
+				<div class="audience_container container">
+					<div class="for_who_title">
+						<h2>Преимущества</h2>
+					</div>
+					<div class="for_who_content">
+						<div class="for_who_content_container for_who_first" style="align-self: flex-end;">
+							<img src="{% static 'main/images/jpg/teacher-explaining-to-pupils-new-things.jpg' %}">
+							<div class="for_who_content_text">
+								<h3>Для учителей</h3>
+								<p>Возможность создания собственных тестов и использование имеющихся на сайте. Автоматическая проверка тестов. Выявление проблемных тем для дальнейшей работы над ними.</p>
+							</div>
+						</div>
+						<div class="for_who_content_container" style="align-self: center;">
+							<img src="{% static 'main/images/jpg/modern-techniques-of-learning-at-school.jpg' %}">
+							<div class="for_who_content_text">
+								<h3>Для учеников</h3>
+								<p>Возможность закрепить или получить знания по необходимым темам</p>
+							</div>
+						</div>
+						<div class="for_who_content_container">
+							<img src="{% static 'main/images/jpg/mother-kid-first-school-day-side-view.jpg' %}">
+							<div class="for_who_content_text">
+								<h3>Для родителей</h3>
+								<p>Информирование о содержании учебно-воспитательного процесса ребенка.</p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class= "audience-more">
+				<div class="container">
+					<h2>Возможности</h2>
+					<div class="more_content">
+						<div class="more_content_container">
+							<div style="flex: 1 1; max-width: 50%;">
+								<img src="{% static 'main/images/jpg/teamwork-over-the-teacher-s-laptop.jpg' %}">
+							</div>
+							<div class="more_text_container">
+								<h3>Для преподавателей</h3>
+								<ul>
+									<li>Возможность быстро и легко проверять домашние задания</li>
+									<li>Не нужно таскать огромные стопки тетрадей</li>
+									<li>Возможность создавать неограниченное количество классов</li>
+									<li>Удобная таблица с успеваемостью учеников</li>
+									<li>Возможность увидеть рейтинг класса</li>
+									<li>Быстрое назначение домашнего задания</li>
+								</ul>
+							</div>
+						</div>
+						<div class="more_content_container">
+							<div style="flex: 1 1; max-width: 50%;">
+								<img src="{% static 'main/images/jpg/happy-little-girl-making-video-call-while-having-online-class-over-laptop.jpg' %}">
+							</div>
+							<div class="more_text_container">
+								<h3>Для учеников</h3>
+								<ul>
+									<li>Можно больше не носить с собой тетради с домашними работами</li>
+									<li>Удобная таблица с личной успеваемостью</li>
+									<li>Возможность создания шпаргалок с быстрым доступом к ним</li>
+									<li>Удобная таблица с личной успеваемостью</li>
+									<li>Возможность увидеть рейтинг класса</li>
+									<li>Возможность посмотреть работу, за которую стоит определенная оценка</li>
+								</ul>
+							</div>
+						</div>
+						<div class="more_content_container">
+							<div style="flex: 1 1; max-width: 50%;">
+								<img src="{% static 'main/images/jpg/portrait-of-happy-smiling-female-wearing-casual-attire-helping-her-daughter-with-lessons-woman-looking-at-her-child-with-love-sitting-at-table-with-books-and-laptop.jpg' %}">
+							</div>
+							<div class="more_text_container">
+								<h3>Для  родителей</h3>
+								<ul>
+									<li>Возможность увидеть успеваемость ребёнка</li>
+									<li>Отслеживание выполнения работ</li>
+									<li>Возможность увидеть задания ребёнка</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<div class="swiper container">
+				<div class="swiper-container">
+				    <div class="swiper-wrapper">
+				        <div class="swiper-slide">
+				        	<div class="capabilities_content_container">
+								<h3>Автопроверка тестов</h3>
+								<p>При создании теста вы сможете подключить автопроверку по фотографиям. Сервис сам распознает ответы и выставит оценку по вашим критериям.</p>
+							</div>
+				        </div>
+				        <div class="swiper-slide">
+				        	<div class="capabilities_content_container">
+								<h3>Конструктор <br> тестов и <br>заданий</h3>
+								<p>Создавайте задания разных форматов: тесты, кроссворды, задания на поиск ошибок в тексте или заполнение пропусков. Используйте аудио- и визуальные материалы, таблицы.</p>
+							</div>
+				        </div>
+				        <div class="swiper-slide">
+				        	<div class="capabilities_content_container">
+								<h3>Умные уведомления</h3>
+								<p>Настройте уведомления об оценках, домашних заданиях или приближающихся сроках и выберете куда хотите получать сообщения.</p>
+							</div>
+				        </div>
+				        <div class="swiper-slide">
+				        	<div class="capabilities_content_container">
+								<h3>Режим чтения</h3>
+								<p class="selected-p">При задании дз где нужно что-либо прочитать у преподавателей будет возможность добавить файл с текстом или книгой, а у ученика в удобном режиме прочитать то, что задано в соответствии с СанПиН</p>
+							</div>
+				        </div>
+				    </div>
+				    <div class="swiper-pagination"></div>
+
+				    <div class="swiper-button-prev"></div>
+				    <div class="swiper-button-next"></div>
+				</div>
+				</div>
+			<!-- <div class="capabilities container">
+				<div class="capabilities_title">
+					<h2>Планируемые функции</h2>
+				</div>
+				<div class="capabilities_content">
+					<div class="capabilities_content_container">
+						<h3>Автопроверка тестов</h3>
+						<p>При создании теста вы сможете подключить автопроверку по фотографиям. Сервис сам распознает ответы и выставит оценку по вашим критериям.</p>
+					</div>
+					<div class="capabilities_content_container">
+						<h3>Конструктор <br> тестов и <br>заданий</h3>
+						<p>Создавайте задания разных форматов: тесты, кроссворды, задания на поиск ошибок в тексте или заполнение пропусков. Используйте аудио- и визуальные материалы, таблицы.</p>
+					</div>
+					<div class="capabilities_content_container">
+						<h3>Умные уведомления</h3>
+						<p>Настройте уведомления об оценках, домашних заданиях или приближающихся сроках и выберете куда хотите получать сообщения.</p>
+					</div>
+					<div class="capabilities_content_container">
+						<h3>Режим чтения</h3>
+						<p>При задании дз где нужно что-либо прочитать у преподавателей будет возможность добавить файл с текстом или книгой, а у ученика в удобном режиме прочитать то, что задано в соответствии с СанПиН</p>
+					</div>
+				</div>
+				<div class="swiper-button-next"></div>
+  				<div class="swiper-button-prev"></div>	
+			</div> -->
+			
+			</div>
+		</main>
+		<footer class="footer">
+			
+		</footer>
+	</div>
+	<script>
+    var swiper = new Swiper(".swiper-container", {
+      spaceBetween: 69,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      loop: true,
+      keyboard: true,
+      slidesPerView: 3,
+    });
+  </script>
+</body>
+</html>

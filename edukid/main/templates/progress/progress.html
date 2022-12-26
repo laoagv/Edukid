@@ -1,0 +1,208 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edukid</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'progress/css/progress.css' %}">
+	<script src="{% static 'progress/js/script.js' %}"></script>
+</head>
+<body>
+	<div class="wrapper">
+		<header class="header">
+			<div class="header_content container">
+				<nav class="menu_body">
+					<div class="burger">
+						<div class="header__burger" id="burger">
+							<span></span>
+							<div class="header__burger-menu">
+								<ul class="burger-list">
+									<li>
+										<img src="{% static 'main/images/svg/burger1.svg' %}">
+										<a href="">Мой класс</a>
+									</li>
+									<li>
+										<img src="{% static 'main/images/svg/burger2.svg' %}">
+										<a href="">Мои тетради</a>
+									</li>
+									<li>
+										<img src="{% static 'main/images/svg/burger3.svg' %}">
+										<a href="">Задания</a>
+									</li>
+									<li>
+										<img src="{% static 'main/images/svg/burger4.svg' %}">
+										<a href="/progress">Успеваемость</a>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="logo">
+						<a href="/">Edukid</a>
+					</div>
+					<ul class="menu_list">
+						<li><a href="/my_classes" class="menu_link">Мой класс</a></li>
+						<li><a href="" class="menu_link">Мои тетради</a></li>
+						<li><a href="" class="menu_link">Задания</a></li>
+						<li><a href="" class="menu_link">Успеваемость</a></li>
+					</ul>
+					<div class="sign-button">
+						<a class="sign-btn" href="http://localhost:3000/"><button id="sign-btn">Профиль</button></a>
+						<img src="{% static 'my_classes/images/jpg/profile-img-ex.jpg' %}">
+					</div>
+				</nav>
+			</div>
+		</header>
+	</div>
+		<section>
+			<div class="app-container container">
+				<h1>Успеваемость</h1>
+				<div class="student-box">
+					<div class="student-img">
+						<img src="{% static 'my_classes/images/jpg/profile-img-ex.jpg' %}">
+					</div>
+					<div class="student-name">Петрова Александра</div>
+				</div>
+				<div class="progress-table-box">
+					<table border="1px solid #484C52;">
+						<tr>
+							<th rowspan="2">Предмет</th>
+							<th colspan="16">Оценки</th>
+							<th rowspan="2">Средний балл</th>
+							<th rowspan="2">Итог</th>
+						</tr>
+						<tr>
+							<td>31.12</td>
+							<td>01.01</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th class="lesson-object">Математика</th>
+							<td>4</td>
+							<td>4</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>4</td>
+							<td>4</td>
+
+						</tr>
+						<tr>
+							<th class="lesson-object">Окр. мир</th>
+							<td>5</td>
+							<td>3</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>4</td>
+							<td>4</td>
+						</tr>
+						<tr>
+							<th class="lesson-object">Физ-ра</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<th class="lesson-object">Музыка</th>
+							<td>2</td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td>2</td>
+							<td>2</td>
+						</tr>
+						<tr>
+							<th class="lesson-object">Литература</th>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+					</table>
+				</div>
+				<div class="class-box">
+					<button class="btn-in-profile" id="class-btn">Выставить оценки<img src="{% static 'my_classes/images/svg/plus.svg' %}"></button>
+				</div>
+			</div>
+		</section>
+</body>

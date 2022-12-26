@@ -1,0 +1,93 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Edukid</title>
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'profile/css/profile.css' %}">
+	<script src="{% static 'profile/js/script.js' %}"></script>
+</head>
+<body>
+	<header>
+		<div class="header-wrapper">
+			<div class="header-container container">
+				<div class="logo">
+					<a href="/">Edukid</a>
+				</div>
+				<div class="class-jump">
+					<img src="{% static 'profile/images/svg/class-icon.svg' %}">				
+				</div>
+				<div class="profile-image">
+					<img src="{% static 'profile/images/jpg/profile-img-ex.jpg'%}">
+				</div>
+				<div class="profile-name">Иванова Екатерина</div>
+				<div class="drop-menu" id="drop-menu">
+					<div class="drop-menu-icon">
+						<img class="drop-menu-button" src="{% static 'profile/images/svg/drop-menu-icon.svg' %}">
+					</div>
+					<div class="drop-menu-points">
+						<div class="drop-menu-point">
+							<img src="{% static 'profile/images/svg/profile-ico.svg' %}">
+							<a href="">Профиль</a>
+						</div>
+						<div class="drop-menu-point">
+							<img src="{% static 'profile/images/svg/settings-ico.svg' %}">
+							<a href="">Настройки</a>
+						</div>
+						<div class="drop-menu-point">
+							<img src="{% static 'profile/images/svg/exit-ico.svg' %}">
+							<a href="">Выйти</a>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</header>
+	<section>
+		<div class="app-container container">
+			<h1>Мой профиль</h1>
+			<div class="profile-box">
+				<div class="profile-box-content">
+					<div class="profile-box-title">Основная информация</div>
+					<button class="btn-in-profile">Редактировать</button>
+				</div>
+				<div class="profile-box-info">
+					<ul class="fields">
+						<li class="field">
+							<div class="field-name">ФИО</div>
+							<div class="field-value">Иванова Екатерина Федоровна</div>
+						</li>
+						<li class="field">
+							<div class="field-name">Школа</div>
+							<div class="field-value"></div>
+						</li>
+						<li class="field">
+							<div class="field-name">Пол</div>
+							<div class="field-value"></div>
+						</li>
+						<li class="field">
+							<div class="field-name">Дата рождения</div>
+							<div class="field-value"></div>
+						</li>
+						<li class="field"> 
+							<div class="field-name">Телефон</div>
+							<div class="field-value"></div>
+						</li>
+					</ul>
+					<div class="profile-box-image">
+						
+					</div>
+				</div>
+			</div>
+			<div class="profile-box">
+				<div></div>
+			</div>
+		</div>
+	</section>
+	<footer></footer>
+</body>
+</html>
