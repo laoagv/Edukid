@@ -16,7 +16,7 @@
 		<div class="header-wrapper">
 			<div class="header-container container">
 				<div class="logo">
-					<a href="/">Edukid</a>
+					<a href="/home">Edukid</a>
 				</div>
 				<div class="class-jump">
 					<img src="{% static 'profile/images/svg/class-icon.svg' %}">				
@@ -24,7 +24,7 @@
 				<div class="profile-image">
 					<img src="{% static 'profile/images/jpg/profile-img-ex.jpg'%}">
 				</div>
-				<div class="profile-name">Иванова Екатерина</div>
+				<div class="profile-name">{{user.name}} {{user.surname}}</div>
 				<div class="drop-menu" id="drop-menu">
 					<div class="drop-menu-icon">
 						<img class="drop-menu-button" src="{% static 'profile/images/svg/drop-menu-icon.svg' %}">
@@ -50,7 +50,9 @@
 	<section>
 		<div class="app-container container">
 			<h1>Мой профиль</h1>
-			<div class="profile-box">
+			<div id="root"></div>
+				<script src="{% static 'profile/js/main.js'%}"></script>
+			<!-- <div class="profile-box">
 				<div class="profile-box-content">
 					<div class="profile-box-title">Основная информация</div>
 					<button class="btn-in-profile">Редактировать</button>
@@ -85,7 +87,7 @@
 			</div>
 			<div class="profile-box">
 				<div></div>
-			</div>
+			</div> -->
 		</div>
 	</section>
 	<footer></footer>

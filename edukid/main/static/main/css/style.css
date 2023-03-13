@@ -713,3 +713,27 @@ header {
 	width: 100%;
 	background: #484C52;
 }
+.username_box{
+	margin: auto 10px;
+	padding: 0;
+	border: 0;
+}
+.logout{
+	margin-left: 0;
+}
+.username_box_name{
+	padding: 5px ;
+	background: #FF6933;
+	border-radius: 8px;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 16px;
+	line-height: 128.9%;
+
+	color: #FFFFFF;
+
+}
+.username_box_name:hover{
+	background: #FFFFFF;
+	color: #FF6933;
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="description"
+      content="Web site created using create-react-app"
+    />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <title>Edukid</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <header class="header">
+      <div class="header_content container">
+        <nav class="menu_body">
+          <div class="burger">
+            <div class="header__burger" id="burger">
+              <span></span>
+              <div class="header__burger-menu">
+                <ul class="burger-list">
+                  <li>
+                    <img src="{% static 'main/images/svg/burger1.svg' %}">
+                    <a href="">Мой класс</a>
+                  </li>
+                  <li>
+                    <img src="{% static 'main/images/svg/burger2.svg' %}">
+                    <a href="">Мои тетради</a>
+                  </li>
+                  <li>
+                    <img src="{% static 'main/images/svg/burger3.svg' %}">
+                    <a href="">Задания</a>
+                  </li>
+                  <li>
+                    <img src="{% static 'main/images/svg/burger4.svg' %}">
+                    <a href="/progress">Успеваемость</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="logo">
+            <a href="/">Edukid</a>
+          </div>
+          <ul class="menu_list">
+            <li><a href="" class="menu_link">Мой класс</a></li>
+            <li><a href="" class="menu_link">Мои тетради</a></li>
+            <li><a href="" class="menu_link">Задания</a></li>
+            <li><a href="/progress" class="menu_link">Успеваемость</a></li>
+          </ul>
+          <div class="sign-button">
+            <a class="sign-btn" href="http://localhost:3000/"><button id="sign-btn">Профиль</button></a>
+            <img src="{% static 'my_classes/images/jpg/profile-img-ex.jpg' %}">
+          </div>
+        </nav>
+      </div>
+    </header>
+    <div class="app-container container">
+      <h1>Мои классы</h1>
+      <div id="root"></div>
+    </div>
+  </body>
+</html>

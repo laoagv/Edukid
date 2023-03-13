@@ -208,6 +208,7 @@ h1{
 	font-family: 'Montserrat';
 	font-style: normal;
 	font-weight: 300;
+	flex-grow: 1;
 	font-size: 24px;
 	line-height: 128.9%;
 

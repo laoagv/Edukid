@@ -46,7 +46,7 @@
 						</div>
 					</div>
 					<div class="logo">
-						<a href="">Edukid</a>
+						<a href="/home">Edukid</a>
 					</div>
 					<ul class="menu_list">
 						<li><a href="" class="menu_link">О нас</a></li>
@@ -54,10 +54,21 @@
 						<li><a href="" class="menu_link">Возможности</a></li>
 						<li><a href="" class="menu_link">Контакты</a></li>
 					</ul>
+					{% if request.user.is_authenticated %}
+					<button class="username_box">
+						<a href="/profile" class="username_box_name">{{user.name}} {{user.surname}}</a>
+					</button>
+					<div class="sign-button logout">
+						
+							<a href="account/logout"><button id="sign-btn">Выйти</button></a>
+					</div>
+					
+					{%else%}
 					<div class="sign-button">
 						<img src="{% static 'main/images/svg/Vector.svg' %}">
-						<a href="/sign-up"><button id="sign-btn">Войти</button></a>
+						<a href="/account/login"><button id="sign-btn">Войти</button></a>
 					</div>
+					{% endif%}
 				</nav>
 			</div>
 		</header>
@@ -93,7 +104,7 @@
 			<div class="more-edukid">
 				<div class="container">
 					<div class="more-edukid-container">
-						<a href="">Edukid</a>
+						<a href="/home">Edukid</a>
 						<p>Сервис <span class="selected-text">EduKid</span> создан для ускорения и облегчения привычных нам процессов, речь о домашних заданиях. Можно быстро назначать и выполнять работы в формате текста, фото, видео, аудио. Отслеживайте успеваемость и создавайте рейтинги учеников. Создавайте тетради с полезными материалами и делитесь ими.</p>
 					</div>
 				</div>
