@@ -1,4 +1,5 @@
 from django.db import models
+from users.models import User
 
 class Graphics(models.Model):
     title = models.CharField("Название графика", max_length=50)
@@ -11,29 +12,27 @@ class Graphics(models.Model):
         verbose_name = "График"
         verbose_name_plural = "Графики"
 
-class Users(models.Model):
-    name = models.CharField("Имя", max_length = 20)
-    surname = models.CharField("Фамилия", max_length=40)
-    father_name = models.CharField("Отчество", max_length=30)
-    type_of_user = models.CharField("Роль", max_length=8)
-    email = models.EmailField("Почта")
-    password = models.CharField("Пароль", max_length=35)
+class Classes(models.Model):
+
+    class_name = models.CharField("Название класса", max_length=50)
+    teacher = models.ForeignKey(User, on_delete = models.CASCADE)
+    students = models.CharField('Список учеников', max_length=50)
+
     def __str__(self):
-        return " ".join([self.name, self.surname, self.father_name])
+        return self.class_name
     class Meta:
-        verbose_name = "Пользователь"
-        verbose_name_plural = "Пользователи"
+        verbose_name = "Класс"
+        verbose_name_plural = "Классы"
 
+class Subject(models.Model):
+    class_id = models.ForeignKey(Classes, on_delete = models.CASCADE)
+    title = models.CharField("Название предмета", max_length = 50)
+    def __str__(self):
+        return str(self.class_id)
+class Homework(models.Model):
+    subject_id = models.ForeignKey(Subject, on_delete = models.CASCADE)
+    name = models.CharField("Название задания", max_length = 50)
+    text = models.TextField("Текст задания")
+    homework_file = models.FileField("Файл задания")
+    deadline = models.DateField("Дедлайн")
 
-
-# class UserProfile(models.Model):
-#     user = models.OneToOneField(User, on_delete=models.CASCADE)
-#     father_name = models.CharField("Отчество", max_length=30)
-#     type_of_user = models.CharField("Роль", max_length=8)
-#
-#     def __unicode__(self):
-#         return self.user
-#
-#     class Meta:
-#         verbose_name = 'Профиль'
-#         verbose_name_plural = 'Профили'

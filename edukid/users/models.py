@@ -1,4 +1,6 @@
 from django.db import models
+from datetime import datetime
+# from main.models import Classes
 from django.contrib.auth.models import (
     BaseUserManager, AbstractBaseUser
 )
@@ -46,12 +48,22 @@ class User(AbstractBaseUser):
         ('teacher', 'Учитель'),
         ('parent', 'Родитель'),
     )
+    GENDER_CHOISES = (
+        ("man", "мужской"),
+        ("woman", "женский")
+    )
     name = models.CharField("Имя", max_length=20)
+    phone =  models.IntegerField("Номер телефона", unique=True, null=True)
+    school = models.CharField("Школа", max_length= 60, default="блять", blank=True)
+    gender = models.CharField("Пол", max_length=7, choices = GENDER_CHOISES, default = GENDER_CHOISES[0])
+    date_of_birth = models.DateField("Дата рождения", null=True, blank=True)
+    picture = models.ImageField("Фото профиля", blank=True)
     surname = models.CharField("Фамилия", max_length=40)
     father_name = models.CharField("Отчество", max_length=30)
     type_of_user = models.CharField("Роль", max_length=8, choices = ROLE_CHOISES, default=ROLE_CHOISES[0])
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
+    classess = models.ManyToManyField("main.Classes", blank=True)
 
     objects = UserManager()
 

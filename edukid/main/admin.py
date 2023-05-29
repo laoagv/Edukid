@@ -1,8 +1,12 @@
 from django.contrib import admin
-from .models import Graphics, Users
+from .models import *
 # Register your models here.
+from users.models import User
+
 admin.site.register(Graphics)
-admin.site.register(Users)
+admin.site.register(Classes)
+admin.site.register(Homework)
+admin.site.register(Subject)
 from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth.models import User
