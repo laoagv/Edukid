@@ -1,0 +1,37 @@
+.student-box{
+	display: flex;
+	flex-direction: row;
+	justify-content: flex-start;
+	margin-top: 34px;
+}
+.student-img{
+	width: 50px;
+	height: 50px;
+	border-radius: 27px;
+	border: 4px solid #FF6933;
+	overflow: hidden;
+}
+.student-name{
+	align-self: center;
+	margin-left: 16px;
+	font-weight: 400;
+	font-size: 24px;
+	line-height: 128.9%;
+
+	color: #484C52;
+}
+.student-delete{
+	margin-left: 42px;
+	align-self: center;
+	width: 40px;
+	height: 40px;
+	background: #FF6933;
+	border-radius: 20px;
+	text-align: center;
+}
+.student-delete img {
+	width: 18px;
+	height: 20px;
+	align-self: center;
+	padding-top: 10px;
+}

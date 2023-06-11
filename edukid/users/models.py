@@ -63,7 +63,7 @@ class User(AbstractBaseUser):
     type_of_user = models.CharField("Роль", max_length=8, choices = ROLE_CHOISES, default=ROLE_CHOISES[0])
     is_active = models.BooleanField(default=True)
     is_admin = models.BooleanField(default=False)
-    classess = models.ManyToManyField("main.Classes", blank=True)
+    # classess = models.ManyToManyField("main.Classes", blank=True)
 
     objects = UserManager()
 

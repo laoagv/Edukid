@@ -1,14 +1,17 @@
 import React, {Component} from "react";
 import Header from "../Components/Header";
+import "./Home.css";
+import styles from "./Home.css"
+
+
 import { checkAuth, fetchWithAuth, getUserClass, getUserData } from "../api";
+import MySlider from "../Components/MySlider";
 
 export default class Home extends Component{
     render(){
-        getUserClass()
-        console.log(localStorage.userClasses)
         return(          
             <div>            
-                <Header />
+                {<Header/>}
                 <div class="page">
                     <div class="introdution">
                         <div class="introdution_container container">
@@ -81,7 +84,7 @@ export default class Home extends Component{
                                     </div>
                                 </div>
                                 <div class="for_who_content_container">
-                                    <img src="{% static 'main/images/jpg/mother-kid-first-school-day-side-view.jpg' %}"/>
+                                    <img src='images/mother-kid-first-school-day-side-view.jpg'/>
                                     <div class="for_who_content_text">
                                         <h3>Для родителей</h3>
                                         <p>Информирование о содержании учебно-воспитательного процесса ребенка.</p>
@@ -96,7 +99,7 @@ export default class Home extends Component{
                             <div class="more_content">
                                 <div class="more_content_container">
                                     <div style={{flex: "1 1", maxWidth: "50%"}}>
-                                        <img src="{% static 'main/images/jpg/teamwork-over-the-teacher-s-laptop.jpg' %}"/>
+                                        <img src="./images/jpg/teamwork-over-the-teacher-s-laptop.jpg"/>
                                     </div>
                                     <div class="more_text_container">
                                         <h3>Для преподавателей</h3>
@@ -142,42 +145,39 @@ export default class Home extends Component{
                             </div>
                         </div>
                     </div>
-                    <div class="swiper container">
-                        <div class="swiper-container">
-                            <div class="swiper-wrapper">
-                                <div class="swiper-slide">
-                                    <div class="capabilities_content_container">
-                                        <h3>Автопроверка тестов</h3>
-                                        <p>При создании теста вы сможете подключить автопроверку по фотографиям. Сервис сам распознает ответы и выставит оценку по вашим критериям.</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="capabilities_content_container">
-                                        <h3>Конструктор <br/> тестов и <br/>заданий</h3>
-                                        <p>Создавайте задания разных форматов: тесты, кроссворды, задания на поиск ошибок в тексте или заполнение пропусков. Используйте аудио- и визуальные материалы, таблицы.</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="capabilities_content_container">
-                                        <h3>Умные уведомления</h3>
-                                        <p>Настройте уведомления об оценках, домашних заданиях или приближающихся сроках и выберете куда хотите получать сообщения.</p>
-                                    </div>
-                                </div>
-                                <div class="swiper-slide">
-                                    <div class="capabilities_content_container">
-                                        <h3>Режим чтения</h3>
-                                        <p class="selected-p">При задании дз где нужно что-либо прочитать у преподавателей будет возможность добавить файл с текстом или книгой, а у ученика в удобном режиме прочитать то, что задано в соответствии с СанПиН</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="swiper-pagination"></div>
-
-                            <div class="swiper-button-prev"></div>
-                            <div class="swiper-button-next"></div>
-                        </div>
-                    </div>
+                    <MySlider/>
                 </div>
             </div>
         )
     }
 }
+{/* <div class="swiper container">
+                        <div class="swiper-container">
+                            <div class="swiper-wrapper">
+                            <div class="swiper-slide">
+                                <div class="capabilities_content_container">
+                                    <h3>Автопроверка тестов</h3>
+                                    <p>При создании теста вы сможете подключить автопроверку по фотографиям. Сервис сам распознает ответы и выставит оценку по вашим критериям.</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="capabilities_content_container">
+                                    <h3>Конструктор <br/> тестов и <br/>заданий</h3>
+                                    <p>Создавайте задания разных форматов: тесты, кроссворды, задания на поиск ошибок в тексте или заполнение пропусков. Используйте аудио- и визуальные материалы, таблицы.</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="capabilities_content_container">
+                                    <h3>Умные уведомления</h3>
+                                    <p>Настройте уведомления об оценках, домашних заданиях или приближающихся сроках и выберете куда хотите получать сообщения.</p>
+                                </div>
+                            </div>
+                            <div class="swiper-slide">
+                                <div class="capabilities_content_container">
+                                    <h3>Режим чтения</h3>
+                                    <p class="selected-p">При задании дз где нужно что-либо прочитать у преподавателей будет возможность добавить файл с текстом или книгой, а у ученика в удобном режиме прочитать то, что задано в соответствии с СанПиН</p>
+                                </div>
+                            </div>
+                            </div>
+                        </div>
+                    </div> */}

@@ -1,0 +1,61 @@
+.app_container{
+    background: #FFFFFF;
+   border-radius: 30px;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   padding: 20px;
+
+}
+.app_container_back{
+    background: #a0a0a0;
+   border-radius: 30px;
+   display: flex;
+   flex-direction: column;
+   text-align: center;
+   margin-top: 52px;
+}
+.input_name{
+    border: none;
+    text-align: left;
+}
+.flex{
+    display: flex;
+    flex-grow: 1;
+}
+.input_title{
+    margin-right: 10px;
+    min-width: 200px;
+    text-align: left;
+}
+.top_margin{
+    margin-top: 10px;
+}
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+    text-align: center;
+}
+.flex_grow{
+    flex-grow: 1;
+}
+.flex_row{
+    margin-top: 15px;
+    display: flex;
+    flex-direction: row;
+}
+.flex_column{
+    display: flex;
+    flex-direction: column;
+}
+
+.button{
+    width: 79px;
+	height: 26px;
+	align-self: center;
+    margin: 0 5px;
+	background: #FF6933;
+	border-radius: 20px;
+	color: #FFFFFF;
+	border: 0px;
+}

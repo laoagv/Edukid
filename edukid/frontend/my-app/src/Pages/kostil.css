@@ -1,0 +1,76 @@
+.dropdown-menu{
+    /* background: #EAEAEA;
+    padding: 10px 20px; */
+    /* height: 0; */
+    /* min-width: 200px;
+    max-width: 200px;
+    max-height: 200px; */
+    /* visibility: hidden;
+    opacity: 0;
+    z-index: -1; */
+    /* position: absolute; */
+    /* overflow: hidden; */
+    list-style: none;
+    /* position: relative;
+    border-radius: 15px;
+    transform: scale(0);
+    transition: all 0.3s ease 0s;
+
+	transform-origin: top; */
+}
+.dropdown-menu li{
+    /* height: auto; */
+    transform: scale(1);
+}
+.dropdown-menu.show{
+    transform: scale(1);
+    /* visibility: visible;
+    opacity: 10;
+    z-index: 10; */
+}
+.dropdown-menu a{
+    display: block 
+
+}
+.okno {
+display: inline;
+transform: translate(-50%, -50%);
+}
+
+.okno select {
+background-color: #FF6933;
+color: white;
+padding: 12px;
+width: 250px;
+border: none;
+font-size: 20px;
+box-shadow: 0 5px 25px rgba(0, 0, 0, 0.2);
+-webkit-appearance: button;
+appearance: button;
+outline: none;
+}
+
+.okno::before {
+content: "\f13a";
+font-family: FontAwesome;
+position: absolute;
+top: 0;
+right: 0;
+width: 20%;
+height: 100%;
+text-align: center;
+font-size: 28px;
+line-height: 45px;
+color: rgba(255, 255, 255, 0.5);
+background-color: rgba(255, 255, 255, 0.1);
+pointer-events: none;
+}
+
+.okno:hover::before {
+color: rgba(255, 255, 255, 0.6);
+background-color: rgba(255, 255, 255, 0.2);
+}
+
+.okno select option {
+padding: 30px;
+}

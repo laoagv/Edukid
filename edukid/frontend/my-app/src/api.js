@@ -43,6 +43,7 @@ function isTokenExp(token){
     return expirationDate<new Date()
 }
 
+
 export function getTokenData(logindata){
     return fetch(server() + 'api/token/', {
         method: 'POST',
@@ -100,7 +101,6 @@ export function checkAuth(){
         return false
     }
     
-    console.log("хуй")
     return true
 }
 
@@ -133,13 +133,18 @@ export function refreshToken(token){
 }
 
 export async function getUserData(){
+    const response = await fetchWithAuth("api/user", {method: 'GET',})
+    const data =  await response.json()       
+    localStorage.setItem('userData', JSON.stringify(await data))
+    return 
     
-    fetchWithAuth("api/user", {method: 'GET',}).then(response =>{
-        return response.json()       
-    })
-    .then(data=>{
-        localStorage.setItem('userData', JSON.stringify(data))
-    })
+    // fetchWithAuth("api/user", {method: 'GET',}).then(response =>{
+    //     return response.json()       
+    // })
+    // .then(data=>{
+    //     localStorage.setItem('userData', JSON.stringify(data))
+    //     return JSON.parse( localStorage.userData)
+    // })
     
 }
 
@@ -173,11 +178,21 @@ export async function fetchWithAuth(url, options) {
     }
     return fetch(server()+url, options); // возвращаем изначальную функцию, но уже с валидным токеном в headers
 }
-export function getUserClass(){
-    fetchWithAuth("api/v1/Classes/",  {method: 'GET',}).then(response =>{
-        return response.json()       
-    })
-    .then(data=>{
-        localStorage.setItem('userClasses', JSON.stringify(data))
-    })
+export async function getUserClass(){
+    const response = await fetchWithAuth("api/v1/Classes/",  {method: 'GET',})
+    const data = await response.json()       
+    localStorage.setItem('userClasses', JSON.stringify(await data))
+    return 
+}
+export async function getUserSubjects(){
+    const response = await fetchWithAuth("api/v1/Subject/",  {method: 'GET',})
+    const data = await response.json()       
+    localStorage.setItem('userSubjects', JSON.stringify(await data))
+    return 
+}
+export async function getUserHomeworks(){
+    const response = await fetchWithAuth("api/v1/Homework/",  {method: 'GET',})
+    const data = await response.json()       
+    localStorage.setItem('userHomeworks', JSON.stringify(await data))
+    return 
 }

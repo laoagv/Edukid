@@ -16,8 +16,7 @@ class Classes(models.Model):
 
     class_name = models.CharField("Название класса", max_length=50)
     teacher = models.ForeignKey(User, on_delete = models.CASCADE)
-    students = models.CharField('Список учеников', max_length=50)
-
+            students = models.ManyToManyField("users.User", blank=True, related_name='classes_students')
     def __str__(self):
         return self.class_name
     class Meta:
@@ -25,14 +24,25 @@ class Classes(models.Model):
         verbose_name_plural = "Классы"
 
 class Subject(models.Model):
-    class_id = models.ForeignKey(Classes, on_delete = models.CASCADE)
     title = models.CharField("Название предмета", max_length = 50)
+    class_id = models.ForeignKey(Classes, on_delete = models.CASCADE)
     def __str__(self):
-        return str(self.class_id)
+        return str(self.title)
+    def get_childrens(self):
+        return self.homework_set.all()
+    homeworks = property(get_childrens)
 class Homework(models.Model):
-    subject_id = models.ForeignKey(Subject, on_delete = models.CASCADE)
     name = models.CharField("Название задания", max_length = 50)
+    subject_id = models.ForeignKey(Subject, on_delete = models.CASCADE)
     text = models.TextField("Текст задания")
-    homework_file = models.FileField("Файл задания")
-    deadline = models.DateField("Дедлайн")
+    homework_file = models.FileField("Файл задания", blank=True, null=True)
+    deadline = models.DateField("Дедлайн", null=True)
+    def __str__(self):
+        return str(self.name)
 
+class Answer(models.Model):
+    student = models.OneToOneField(User, on_delete=models.CASCADE)
+    homework = models.ForeignKey(Homework, on_delete=models.CASCADE)
+    text = models.TextField("Ответ")
+    def __str__(self):
+        return str(self.homework)

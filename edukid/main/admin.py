@@ -2,14 +2,22 @@ from django.contrib import admin
 from .models import *
 # Register your models here.
 from users.models import User
+from users.admin import UserInLine
+from django.contrib import admin
 
+# class ClassesInLine(admin.TabularInline):
+#     model = User.classess.through
+
+class ClassesAdmin(admin.ModelAdmin):
+    inlines = [UserInLine]
 admin.site.register(Graphics)
-admin.site.register(Classes)
+admin.site.register(Classes, ClassesAdmin)
 admin.site.register(Homework)
 admin.site.register(Subject)
-from django.contrib.auth.admin import UserAdmin
+admin.site.register(Answer)
+# from django.contrib.auth.admin import UserAdmin
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.models import User
+# from django.contrib.auth.models import User
 from django.utils.translation import gettext, gettext_lazy as _
 
 # from .models import UserProfile

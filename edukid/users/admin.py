@@ -4,8 +4,9 @@ from django.contrib.auth.models import Group
 from django.contrib.auth.admin import UserAdmin as BaseUserAdmin
 from django.contrib.auth.forms import ReadOnlyPasswordHashField
 from django.core.exceptions import ValidationError
-
+# from main.admin import ClassesInLine
 from .models import User
+from main.models import Classes
 
 
 class UserCreationForm(forms.ModelForm):
@@ -62,7 +63,7 @@ class UserAdmin(BaseUserAdmin):
     # The forms to add and change user instances
     form = UserChangeForm
     add_form = UserCreationForm
-
+    # inlines = [ClassesInLine]
     # The fields to be used in displaying the User model.
     # These override the definitions on the base UserAdmin
     # that reference specific fields on auth.User.
@@ -85,6 +86,12 @@ class UserAdmin(BaseUserAdmin):
     ordering = ('email',)
     filter_horizontal = ()
 
+class UserInLine(admin.TabularInline):
+    model = Classes.students.through
+
+
+# class UserAdmin(admin.ModelAdmin):
+#     inlines = [ClassesInLine]
 
 # Now register the new UserAdmin...
 admin.site.register(User, UserAdmin)

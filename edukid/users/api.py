@@ -14,19 +14,25 @@ class UserViewSet(viewsets.ModelViewSet):
     #         return Response({'id': user.id}, status=status.HTTP_201_CREATED)
     #     else:
     #         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
-
+    permissions_classes = (
+        permissions.IsAuthenticated,
+    )
+    serializer_class = UserSerializer
     def get_queryset(self):
         """
         This view should return a list of all the purchases
         for the currently authenticated user.
         """
-        print(self.request)
+
         user = self.request.user
         filterset_fields = ["name", "surname", "father_name", "phone", "school", "gender", "date_of_birth", "picture", "type_of_user", "email", ]
         return User.objects.filter(id=user.id)
 
+    # def post(self, request, *args, **kwargs):
+    #     password = request.pop('password', None)
+    #     instance = self.Meta.model(**validated_data)
+    #     if password is not None:
+    #         instance.set_password(password)
+    #         instance.save()
+    #     return instance
 
-    permissions_classes = (
-        permissions.IsAuthenticated,
-    )
-    serializer_class = UserSerializer

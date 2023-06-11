@@ -5,12 +5,14 @@ from rest_framework.authtoken.models import Token
 
 
 class UserSerializer(serializers.ModelSerializer):
+
     class Meta:
         model=User
-        fields = ["id","name", "surname", "father_name", "phone", "school", "gender", "date_of_birth", "picture", "type_of_user", "email", "classess"]
+        fields = ["id","name", "surname", "father_name", "phone", "school", "gender", "date_of_birth", "picture", "type_of_user", "email","password"]
         password = serializers.CharField(write_only=True)
 
     def create(self, validated_data):
+        print(validated_data)
         password = validated_data.pop('password', None)
         instance = self.Meta.model(**validated_data)
         if password is not None:
