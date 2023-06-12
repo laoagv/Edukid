@@ -99,7 +99,8 @@ class SubjectAPICreate(generics.ListCreateAPIView):
     # permission_classes = (permissions.IsAuthenticated, IsTeacher, IsTeacherOwner)
     def post(self, request, *args, **kwargs):
         class_id = request.data.pop('class_id')
-        serializer = self.serializer_class(data=request.data, context={"class_id":class_id})
+        #
+        serializer = self.serializer_class(data=request.data, context = {"class_id": class_id})
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -154,9 +155,9 @@ class HomeworkAPICreate(generics.ListCreateAPIView):
     # permission_classes = (permissions.IsAuthenticated, IsTeacher)
     def post(self, request, *args, **kwargs):
         # subject_id = subject, **
-        class_id = request.data.pop('subject_id')
-
-        serializer = self.serializer_class(data=request.data, context = {"subject_id": class_id})
+        # class_id = request.data.pop('subject_id')
+        # , context = {"subject_id": class_id}
+        serializer = self.serializer_class(data=request.data)
         if serializer.is_valid():
             serializer.save()
             return Response(serializer.data, status=status.HTTP_201_CREATED)
@@ -182,6 +183,7 @@ class AnswerAPICreate(generics.ListAPIView):
     serializer_class =AnswerSerializer
     def post(self, request, *args, **kwargs):
         # subject_id = subject, **
+        print(request.data)
         homework = request.data.pop('homework')
 
         serializer = self.serializer_class(data=request.data, context = {"homework": homework, "student":request.user})

@@ -16,7 +16,7 @@ class Classes(models.Model):
 
     class_name = models.CharField("Название класса", max_length=50)
     teacher = models.ForeignKey(User, on_delete = models.CASCADE)
-            students = models.ManyToManyField("users.User", blank=True, related_name='classes_students')
+    students = models.ManyToManyField("users.User", blank=True, related_name='classes_students')
     def __str__(self):
         return self.class_name
     class Meta:
@@ -41,7 +41,7 @@ class Homework(models.Model):
         return str(self.name)
 
 class Answer(models.Model):
-    student = models.OneToOneField(User, on_delete=models.CASCADE)
+    student = models.ForeignKey(User, on_delete=models.CASCADE)
     homework = models.ForeignKey(Homework, on_delete=models.CASCADE)
     text = models.TextField("Ответ")
     def __str__(self):

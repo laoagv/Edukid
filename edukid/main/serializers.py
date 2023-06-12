@@ -72,10 +72,11 @@ class HomeworkSerializer(serializers.ModelSerializer):
         subject_id = obj.subject_id.id
         return subject_id
     def create(self, validated_data):
-        subject = Subject.objects.get(id=self.context["subject_id"])
-        return Homework.objects.create(subject_id=subject,**validated_data)
+        # subject = Subject.objects.get(id=self.context["subject_id"])
+        # subject_id = subject, **
+        return Homework.objects.create(**validated_data)
 class SubjectSerializer(serializers.ModelSerializer):
-    class_id = ClassesSerializer(many=False, required=True, read_only=False)
+    class_id = ClassesSerializer(many=False, required=False, read_only=False)
     homeworks = serializers.SerializerMethodField()
     # check = models.CharField("check", default="хуй")
     class Meta:
@@ -90,7 +91,7 @@ class SubjectSerializer(serializers.ModelSerializer):
 
     def create(self, validated_data):
         classs = Classes.objects.get(id=self.context["class_id"])
-        return Subject.objects.create(class_id=classs,**validated_data)
+        return Subject.objects.create(class_id = classs, **validated_data)
 
 # class UsersSerializer(serializers.ModelSerializer):
 #     class Meta:
